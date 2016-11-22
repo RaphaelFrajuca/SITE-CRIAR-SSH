@@ -13,11 +13,18 @@ shell_exec("echo $ip >> ips.txt");
           $senha2=preg_replace("/[^a-zA-Z0-9\s]/", "-", $senha);
 $existente=shell_exec("cat /etc/passwd | grep $user2");
 
+$root=shell_exec("echo $user2 | grep root");
+
+if ($root) {
+echo "<div align='center'><h1>TENTATIVA DE MUDANÇA DE USUARIO ROOT DETECTADA!</h1><p>IP: $ip BANIDO DO SERVIDOR!</p></div>";
+shell_exec("route add -host $ip reject");
+} else {
 if ($existente) {
 
 echo "<div align='center'><h1>Usuario Existente!</h1></div>";
 } else {
           $out=shell_exec("sudo sh criar.sh $user2 $senha2 $ip");
 echo "$out";
+}
 }
 ?>
