@@ -2,10 +2,7 @@
 require("index.php");
 echo "<div align='center'><h1>Criar SSH</h1></div>";
 
-$ip=escapeshellcmd($_SERVER["REMOTE_ADDR"]);
-
-shell_exec("echo $ip >> ips.txt");
-
+$ip = $_SERVER["REMOTE_ADDR"]);
 
           $user=escapeshellcmd($_POST["login"]);
           $user2=preg_replace("/[^a-zA-Z0-9\s]/", "-", $user);
