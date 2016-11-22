@@ -1,6 +1,6 @@
 <?php
 require("index.php");
-echo "<div align='center'><h1>BadGuy</h1></div>";
+echo "<div align='center'><h1>Criar SSH</h1></div>";
 
 $ip=escapeshellcmd($_SERVER["REMOTE_ADDR"]);
 
