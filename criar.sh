@@ -2,9 +2,9 @@
 
 # BadGuy
 
-if [ $1 = root ]
+if [ "$1" = "root" ]
 then
-echo <h2>Usuario invalido !</h2>
+echo "<h2>Usuario invalido !</h2>"
 exit
 fi
 
